@@ -3,229 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artistic Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <title>Mark Chrisman - Laser art, woodworking, photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+          rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            padding: 2rem;
+            font-family: 'Lato', sans-serif;
+            background-color: #f7f7f7;
+            color: #333333;
+            line-height: 1.6;
+            padding: 20px;
         }
 
-        .grid {
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+        }
+
+        a {
+            color: #1d3557;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff6b6b;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .grid-item {
-            width: 300px;
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .portfolio {
+            margin-left: -20px;
+            width: auto;
+        }
+
+        .project {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            break-inside: avoid;
-            position: relative;
-            overflow: hidden;
+            width: calc(33.333% - 20px);
+            margin-left: 20px;
         }
 
-        .grid-item img {
-            display: block;
+        .project-wide {
+            grid-column: span 2;
+            width: calc(66.666% - 20px);
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .project img {
             width: 100%;
             height: auto;
-            transition: transform 0.3s ease;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
 
-        .grid-item:hover img {
-            transform: scale(1.05);
+        .project p {
+            font-size: 16px;
+            color: #666666;
         }
 
-        .project-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+        .project-vertical .project-images {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .grid-item:hover .project-info {
-            transform: translateY(0);
+        .project-horizontal .project-images {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+        .project-horizontal .project-images img {
+            width: calc(50% - 10px);
         }
 
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            border-top: 1px solid #ddd;
         }
 
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
+        @media (max-width: 768px) {
+            .project, .project-wide {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .project, .project-wide {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-<h1>Artistic Portfolio</h1>
-<div class="grid">
-    <div class="grid-item">
-        <img src="valentines-kiss-1.jpeg" alt="Valentine's Kiss 1">
-        <img src="valentines-kiss-2.jpeg" alt="Valentine's Kiss 2">
-        <div class="project-info">
+
+<header>
+    <h2 style="margin-bottom:0; padding-bottom:0">Mark Chrisman</h2>
+    <p>Laser art, woodworking, photography</p>
+</header>
+
+<div class="container">
+    <section class="portfolio">
+        <!-- Project 1 - Valentine's Kiss -->
+        <div class="project project-vertical ">
             <h3>Valentine's Kiss</h3>
+            <div class="project-images">
+                <!-- Image 2 at full width on top -->
+                <img src="valentines-kiss-2.jpeg" alt="Valentine's Kiss Image 2" style="width: 100%; height: auto;">
+                <img src="valentines-kiss-1.jpeg" alt="Valentine's Kiss Image 1" style="width: 100%; height: auto;">
+            </div>
             <p>Wood mosaics in (mostly) natural colors, with frame.</p>
+            <div style="clear: both;"></div>
         </div>
-    </div>
-    <div class="grid-item">
-        <img src="america-the-beautiful.jpeg" alt="America the Beautiful">
-        <div class="project-info">
+
+        <!-- Project 2 - America the Beautiful -->
+        <div class="project project-vertical project-wide">
             <h3>America the Beautiful</h3>
-            <p>Wood mosaic, 72 pieces</p>
+            <div class="project-images">
+                <img src="america-the-beautiful.jpeg" alt="America the Beautiful Image"
+                     style="width: 100%; height: auto;">
+            </div>
+            <p>Wood mosaic, 72 pieces.</p>
         </div>
-    </div>
-    <div class="grid-item">
-        <img src="patriotic-frabjous.jpeg" alt="Patriotic Frabjous">
-        <div class="project-info">
+        <!-- Project 3 - Patriotic Frabjous (Single Width) -->
+        <div class="project project-vertical">
             <h3>Patriotic Frabjous</h3>
-            <p>A puzzle with 30 identical pieces. I didn't invent the shape. For more information about that, go
-                here.</p>
+            <div class="project-images">
+                <img src="patriotic-frabjous.jpeg" alt="Patriotic Frabjous Image"
+                     style="width: 100%; height: auto;">
+            </div>
+            <p>A puzzle with 30 identical pieces. For more information about the shape, visit the <a
+                    href="https://georgehart.com/sculpture/frabjous.html" target="_blank">Frabjous Puzzle</a>.</p>
         </div>
-    </div>
-    <div class="grid-item">
-        <img src="dome-puzzle-1.jpeg" alt="Dome Puzzle 1">
-        <img src="dome-puzzle-2.jpeg" alt="Dome Puzzle 2">
-        <img src="dome-puzzle-3.jpeg" alt="Dome Puzzle 3">
-        <img src="dome-puzzle-4.jpeg" alt="Dome Puzzle 4">
-        <img src="dome-puzzle-5.jpeg" alt="Dome Puzzle 5">
-        <img src="dome-puzzles-more-1.jpeg" alt="More Dome Puzzles 1">
-        <img src="dome-puzzles-more-2.jpeg" alt="More Dome Puzzles 2">
-        <img src="dome-puzzles-more-3.jpeg" alt="More Dome Puzzles 3">
-        <img src="dome-puzzles-engraved.jpeg" alt="Engraved Dome Puzzles">
-        <div class="project-info">
-            <h3>Dome puzzle series</h3>
-            <p>Dome-shaped jigsaw puzzles. For more information about how they were created, go here.</p>
-        </div>
-    </div>
-    <div class="grid-item">
-        <img src="calico.jpeg" alt="Calico">
-        <div class="project-info">
+
+        <!-- Project 5 - Calico (Single Width) -->
+        <div class="project project-vertical">
             <h3>Calico</h3>
-            <p>Mosaic / Puzzle, in frame with laser-cut joints</p>
+            <div class="project-images">
+                <img src="calico.jpeg" alt="Calico Image" style="width: 100%; height: auto;">
+            </div>
+            <p>Mosaic / Puzzle, in frame with laser-cut joints.</p>
         </div>
-    </div>
-    <div class="grid-item">
-        <img src="end-table.jpeg" alt="End Table">
-        <div class="project-info">
-            <h3>End table</h3>
+
+        <!-- Project 6 - End Table (Single Width) -->
+        <div class="project project-vertical">
+            <h3>End Table</h3>
+            <div class="project-images">
+                <img src="end-table.jpeg" alt="End Table Image" style="width: 100%; height: auto;">
+            </div>
             <p>Tabletop designed to hold swappable decorative inserts.</p>
         </div>
-    </div>
-    <div class="grid-item">
-        <img src="christmas-little-chick-ornaments.jpeg" alt="Christmas Little Chick Ornaments">
-        <img src="christmas-micro-puzzles.jpeg" alt="Christmas Micro Puzzles">
-        <img src="christmas-ornament-trio.jpeg" alt="Christmas Ornament Trio">
-        <div class="project-info">
-            <h3>Christmas</h3>
-            <p>Inlay of wood and shell veneer.</p>
+
+        <!-- Project 4 - Dome Puzzle Series (Grid Layout for all images) -->
+        <div class="project project-vertical project-wide">
+            <h3>Dome Puzzle Series</h3>
+
+            <!-- All images arranged using a single CSS Grid -->
+            <div class="project-images"
+                 style="display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 10px;">
+
+                <!-- First image takes the entire first row at 100% width -->
+                <img src="dome-puzzle-1.jpeg" alt="Dome Puzzle Image 1"
+                     style="grid-column: span 4; width: 100%; height: auto;">
+
+                <!-- Next four images at 25% width each, in a single row -->
+                <img src="dome-puzzle-2.jpeg" alt="Dome Puzzle Image 2" style="width: 100%; height: auto;">
+                <img src="dome-puzzle-3.jpeg" alt="Dome Puzzle Image 3" style="width: 100%; height: auto;">
+                <img src="dome-puzzle-4.jpeg" alt="Dome Puzzle Image 4" style="width: 100%; height: auto;">
+                <img src="dome-puzzle-5.jpeg" alt="Dome Puzzle Image 5" style="width: 100%; height: auto;">
+
+                <!-- Remaining images at 50% width, two per row -->
+                <img src="dome-puzzles-more-1.jpeg" alt="Dome Puzzles More Image 1"
+                     style="grid-column: span 2; width: 100%; height: auto;">
+                <img src="dome-puzzles-more-2.jpeg" alt="Dome Puzzles More Image 2"
+                     style="grid-column: span 2; width: 100%; height: auto;">
+                <img src="dome-puzzles-more-3.jpeg" alt="Dome Puzzles More Image 3"
+                     style="grid-column: span 2; width: 100%; height: auto;">
+                <img src="dome-puzzles-engraved.jpeg" alt="Dome Puzzles Engraved Image"
+                     style="grid-column: span 2; width: 100%; height: auto;">
+
+            </div>
+
+            <p>Dome-shaped jigsaw puzzles. For more information about how they were created, visit <a
+                    href="https://community.glowforge.com/t/dome-shaped-jigsaw-puzzle/126710"
+                    target="_blank">here</a>.</p>
         </div>
-    </div>
-    <div class="grid-item">
-        <img src="halloween-dance.jpeg" alt="Halloween Dance">
-        <img src="halloween-dance-shell.jpeg" alt="Halloween Dance Shell">
-        <img src="zombie-kitties.jpeg" alt="Zombie Kitties">
-        <img src="zombie-kitties-angled.jpeg" alt="Zombie Kitties Angled">
-        <div class="project-info">
-            <h3>Halloween</h3>
-        </div>
-    </div>
-    <div class="grid-item">
-        <img src="clock.jpeg" alt="Clock">
-        <img src="clock-back.jpeg" alt="Clock Back">
-        <img src="tape-dispenser.jpeg" alt="Tape Dispenser">
-        <div class="project-info">
+
+        <!-- Project 9 - Style -->
+        <div class="project project-vertical">
             <h3>Style</h3>
+            <div class="project-images">
+                <img src="clock.jpeg" alt="Clock Image">
+                <!--                    <img src="clock-back.jpeg" alt="Clock Back Image">-->
+                <img src="tape-dispenser.jpeg" alt="Tape Dispenser Image">
+                <img src="photography-sausolito-skyline.jpeg" alt="Sausolito Skyline">
+            </div>
         </div>
-    </div>
-    <div class="grid-item">
-        <img src="Half-moon-bay-enhanced.jpeg" alt="Half Moon Bay Enhanced">
-        <img src="photography-kawaii sunset.jpeg" alt="Kawaii Sunset">
-        <img src="photography-boat-under-fog.jpeg" alt="Boat Under Fog">
-        <img src="photography-hawaii-rainbow.jpeg" alt="Hawaii Rainbow">
-        <img src="photography-morro-boats.jpeg" alt="Morro Boats">
-        <img src="photography-morro-sunset.jpeg" alt="Morro Sunset">
-        <img src="photography-sausolito-skyline.jpeg" alt="Sausolito Skyline">
-        <div class="project-info">
-            <h3>Photography</h3>
+        <!-- Project 7 - Christmas  -->
+        <div class="project project-vertical project-wide">
+            <h3>Christmas Ornaments</h3>
+
+            <!-- First image at 100% width -->
+            <div class="project-images" style="display: grid; grid-template-columns: 1fr; grid-gap: 10px;">
+                <img src="christmas-little-chick-ornaments.jpeg" alt="Christmas Little Chick Ornaments"
+                     style="width: 100%; height: auto;">
+            </div>
+
+            <p>Inlay of wood and shell veneer.</p>
+            <!-- Next row with two images at 50% width each -->
+            <div class="project-images"
+                 style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px;">
+                <img src="christmas-ornament-trio.jpeg" alt="Christmas Ornament Trio"
+                     style="width: 100%; height: auto;">
+            </div>
+
+            </p>
         </div>
-    </div>
-    <div class="grid-item">
-        <img src="civil-war-1.jpeg" alt="Civil War 1">
-        <img src="civil-war-2.jpeg" alt="Civil War 2">
-        <img src="civil-war-3.jpeg" alt="Civil War 3">
-        <img src="civil-war-4.jpeg" alt="Civil War 4">
-        <img src="napa.jpeg" alt="Napa">
-        <div class="project-info">
-            <h3>Family Reunion</h3>
-            <p>Colored Regiment Puzzles</p>
+        <!-- Project 7b - Christmas -->
+        <div class="project project-vertical ">
+            <h3>Christmas micro-puzzles</h3>
+
+            <div class="project-images"
+            ">
+            <img src="christmas-micro-puzzles.jpeg" alt="Christmas Micro Puzzles"
+                 style="width: 100%; height: auto;">
         </div>
+
+        <p>Watch the <a href="https://youtu.be/9SLuh7h9EAI" target="_blank">YouTube video</a> for more details.
+        </p>
+</div>
+<!-- Project 8 - Halloween (Grid Layout, Double Width) -->
+<div class="project project-vertical project-wide">
+    <h3>Halloween</h3>
+
+    <!-- Two images side by side (50% width each) -->
+    <div class="project-images"
+         style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px;">
+        <img src="zombie-kitties.jpeg" alt="Zombie Kitties"
+             style="width: 100%; height: auto;">
+        <img src="halloween-dance.jpeg" alt="Halloween Dance" style="width: 100%; height: auto;">
     </div>
-    <div class="grid-item">
-        <img src="infinite-garden.jpeg" alt="Infinite Garden">
+
+</div>
+<!-- Project 10 - Photography (Mixed Widths) -->
+<div class="project project-vertical project-wide">
+    <h3>Photography</h3>
+    <!-- First two images are double width -->
+    <img src="half-moon-bay-enhanced.jpeg" alt="Half Moon Bay" style="width: 100%; height: auto;">
+    <img src="photography-kawaii sunset.jpeg" alt="Kawaii Sunset" style="width: 100%; height: auto;">
+
+    <!-- The next four are single width -->
+    <div class="project-images">
+        <img src="photography-boat-under-fog.jpeg" alt="Boat Under Fog" style="width: 100%; height: auto;">
+        <img src="photography-hawaii-rainbow.jpeg" alt="Hawaii Rainbow" style="width: 100%; height: auto;">
+        <img src="photography-morro-boats.jpeg" alt="Morro Boats" style="width: 100%; height: auto;">
+        <img src="photography-morro-sunset.jpeg" alt="Morro Sunset" style="width: 100%; height: auto;">
+
+    </div>
+</div>
+<!-- Project 11 - Family Reunion -->
+<div class="project project-vertical">
+    <h3>Family Reunion</h3>
+    <div class="project-images">
+        <img src="civil-war-1.jpeg" alt="Civil War Puzzle 1">
+        <img src="civil-war-2.jpeg" alt="Civil War Puzzle 2">
+        <img src="civil-war-3.jpeg" alt="Civil War Puzzle 3">
+        <img src="civil-war-4.jpeg" alt="Civil War Puzzle 4">
+        <img src="napa.jpeg" alt="Napa Puzzle">
+    </div>
+</div>
+
+<!-- Project 12 - Infinite Garden -->
+<div class="project project-vertical">
+    <h3>Infinite Garden</h3>
+    <div class="project-images">
+        <img src="infinite-garden.jpeg" alt="Infinite Garden Image 1">
         <img src="infinite-garden-assembly.jpeg" alt="Infinite Garden Assembly">
-        <img src="infinite-garden-in-hanadd.jpeg" alt="Infinite Garden in Hanadd">
-        <div class="project-info">
-            <h3>"Infinite Garden"</h3>
-            <p>Jigsaw puzzle</p>
-        </div>
+        <img src="infinite-garden-in-hanadd.jpeg" alt="Infinite Garden In Hand">
     </div>
+    <p>A self-crossing jigsaw puzzle.</p>
 </div>
-<div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
+
+</section>
 </div>
+
+<footer>
+    <p>&copy; 2024 My Portfolio</p>
+</footer>
+
+<!-- Masonry Initialization -->
+<script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
 <script>
-    window.addEventListener('load', () => {
-        new Masonry('.grid', {
-            itemSelector: '.grid-item',
-            columnWidth: 300,
-            gutter: 20
-        });
-
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const closeBtn = document.getElementsByClassName('close')[0];
-
-        document.querySelectorAll('.grid-item img').forEach(img => {
-            img.onclick = function () {
-                modal.style.display = 'block';
-                modalImg.src = this.src;
-            }
-        });
-
-        closeBtn.onclick = function () {
-            modal.style.display = 'none';
-        }
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
+    var elem = document.querySelector('.portfolio');
+    var msnry = new Masonry(elem, {
+        // options
+        itemSelector: '.project',
+        columnWidth: '.project',
+        percentPosition: true
     });
 </script>
+
 </body>
 </html>
