@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Woodwork and Puzzles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f7f7f7;
+            color: #333333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+        }
+        a {
+            color: #1d3557;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #ff6b6b;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 18px;
+        }
+        .portfolio {
+            margin-left: -20px;
+            width: auto;
+        }
+        .project {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: calc(33.333% - 20px);
+            margin-left: 20px;
+        }
+        .project-wide {
+            grid-column: span 2;
+            width: calc(66.666% - 20px);
+        }
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .project p {
+            font-size: 16px;
+            color: #666666;
+        }
+        .project-vertical .project-images {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .project-horizontal .project-images {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        .project-horizontal .project-images img {
+            width: calc(50% - 10px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            border-top: 1px solid #ddd;
+        }
+        @media (max-width: 768px) {
+            .project, .project-wide {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 500px) {
+            .project, .project-wide {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Woodwork and Puzzle Gallery</h1>
+        <p>A showcase of handcrafted wood mosaics, puzzles, and creative designs.</p>
+    </header>
+
+    <div class="container">
+        <section class="portfolio">
+            <!-- Project 1 - Valentine's Kiss -->
+            <div class="project project-vertical">
+                <h3>Valentine's Kiss</h3>
+                <div class="project-images">
+                    <img src="valentines-kiss-1.jpeg" alt="Valentine's Kiss Image 1">
+                    <img src="valentines-kiss-2.jpeg" alt="Valentine's Kiss Image 2">
+                </div>
+                <p>Wood mosaics in (mostly) natural colors, with frame.</p>
+            </div>
+
+            <!-- Project 2 - America the Beautiful -->
+            <div class="project project-vertical">
+                <h3>America the Beautiful</h3>
+                <div class="project-images">
+                    <img src="america-the-beautiful.jpeg" alt="America the Beautiful Image">
+                </div>
+                <p>Wood mosaic, 72 pieces.</p>
+            </div>
+
+            <!-- Project 3 - Patriotic Frabjous -->
+            <div class="project project-horizontal project-wide">
+                <h3>Patriotic Frabjous</h3>
+                <div class="project-images">
+                    <img src="patriotic-frabjous.jpeg" alt="Patriotic Frabjous Image 1">
+                </div>
+                <p>A puzzle with 30 identical pieces. For more information about the shape, visit the <a href="https://georgehart.com/sculpture/frabjous.html" target="_blank">Frabjous Puzzle</a>.</p>
+            </div>
+
+            <!-- Project 4 - Dome Puzzle Series -->
+            <div class="project project-vertical project-wide">
+                <h3>Dome Puzzle Series</h3>
+                <div class="project-images">
+                    <img src="dome-puzzle-1.jpeg" alt="Dome Puzzle Image 1">
+                    <img src="dome-puzzle-2.jpeg" alt="Dome Puzzle Image 2">
+                    <img src="dome-puzzle-3.jpeg" alt="Dome Puzzle Image 3">
+                    <img src="dome-puzzle-4.jpeg" alt="Dome Puzzle Image 4">
+                    <img src="dome-puzzle-5.jpeg" alt="Dome Puzzle Image 5">
+                    <img src="dome-puzzles-more-1.jpeg" alt="Dome Puzzles More Image 1">
+                    <img src="dome-puzzles-more-2.jpeg" alt="Dome Puzzles More Image 2">
+                    <img src="dome-puzzles-more-3.jpeg" alt="Dome Puzzles More Image 3">
+                    <img src="dome-puzzles-engraved.jpeg" alt="Dome Puzzles Engraved Image">
+                </div>
+                <p>Dome-shaped jigsaw puzzles. For more information about how they were created, visit <a href="https://community.glowforge.com/t/dome-shaped-jigsaw-puzzle/126710" target="_blank">here</a>.</p>
+            </div>
+
+            <!-- Project 5 - Calico -->
+            <div class="project project-horizontal">
+                <h3>Calico</h3>
+                <div class="project-images">
+                    <img src="calico.jpeg" alt="Calico Image">
+                </div>
+                <p>Mosaic / Puzzle, in frame with laser-cut joints.</p>
+            </div>
+
+            <!-- Project 6 - End Table -->
+            <div class="project project-vertical">
+                <h3>End Table</h3>
+                <div class="project-images">
+                    <img src="end-table.jpeg" alt="End Table Image">
+                </div>
+                <p>Tabletop designed to hold swappable decorative inserts.</p>
+            </div>
+
+            <!-- Project 7 - Christmas -->
+            <div class="project project-vertical project-wide">
+                <h3>Christmas</h3>
+                <div class="project-images">
+                    <img src="christmas-little-chick-ornaments.jpeg" alt="Christmas Little Chick Ornaments">
+                    <img src="christmas-micro-puzzles.jpeg" alt="Christmas Micro Puzzles">
+                    <img src="christmas-ornament-trio.jpeg" alt="Christmas Ornament Trio">
+                </div>
+                <p>Inlay of wood and shell veneer.</p>
+                <p>Watch the <a href="https://youtu.be/9SLuh7h9EAI" target="_blank">YouTube video</a> for more details.</p>
+            </div>
+
+            <!-- Project 8 - Halloween -->
+            <div class="project project-vertical project-wide">
+                <h3>Halloween</h3>
+                <div class="project-images">
+                    <img src="halloween-dance.jpeg" alt="Halloween Dance">
+                    <img src="halloween-dance-shell.jpeg" alt="Halloween Dance Shell">
+                    <img src="zombie-kitties.jpeg" alt="Zombie Kitties">
+                    <img src="zombie-kitties-angled.jpeg" alt="Zombie Kitties Angled">
+                </div>
+                <p>A Halloween-themed woodwork project.</p>
+            </div>
+
+            <!-- Project 9 - Style -->
+            <div class="project project-vertical">
+                <h3>Style</h3>
+                <div class="project-images">
+                    <img src="clock.jpeg" alt="Clock Image">
+                    <img src="clock-back.jpeg" alt="Clock Back Image">
+                    <img src="tape-dispenser.jpeg" alt="Tape Dispenser Image">
+                </div>
+                <p>Decorative items, including clocks and tape dispensers.</p>
+            </div>
+
+            <!-- Project 10 - Photography -->
+            <div class="project project-vertical project-wide">
+                <h3>Photography</h3>
+                <div class="project-images">
+                    <img src="half-moon-bay-enhanced.jpeg" alt="Half Moon Bay">
+                    <img src="photography-kawaii-sunset.jpeg" alt="Kawaii Sunset">
+                    <img src="photography-boat-under-fog.jpeg" alt="Boat Under Fog">
+                    <img src="photography-hawaii-rainbow.jpeg" alt="Hawaii Rainbow">
+                    <img src="photography-morro-boats.jpeg" alt="Morro Boats">
+                    <img src="photography-morro-sunset.jpeg" alt="Morro Sunset">
+                    <img src="photography-sausolito-skyline.jpeg" alt="Sausolito Skyline">
+                </div>
+                <p>Various photography pieces capturing nature and landscapes.</p>
+            </div>
+
+            <!-- Project 11 - Family Reunion -->
+            <div class="project project-vertical">
+                <h3>Family Reunion: Colored Regiment Puzzles</h3>
+                <div class="project-images">
+                    <img src="civil-war-1.jpeg" alt="Civil War Puzzle 1">
+                    <img src="civil-war-2.jpeg" alt="Civil War Puzzle 2">
+                    <img src="civil-war-3.jpeg" alt="Civil War Puzzle 3">
+                    <img src="civil-war-4.jpeg" alt="Civil War Puzzle 4">
+                    <img src="napa.jpeg" alt="Napa Puzzle">
+                </div>
+                <p>Colored regiment puzzles from the Civil War.</p>
+            </div>
+
+            <!-- Project 12 - Infinite Garden -->
+            <div class="project project-vertical">
+                <h3>Infinite Garden</h3>
+                <div class="project-images">
+                    <img src="infinite-garden.jpeg" alt="Infinite Garden Image 1">
+                    <img src="infinite-garden-assembly.jpeg" alt="Infinite Garden Assembly">
+                    <img src="infinite-garden-in-hanadd.jpeg" alt="Infinite Garden In Hand">
+                </div>
+                <p>A beautifully designed jigsaw puzzle.</p>
+            </div>
+
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+
+    <!-- Masonry Initialization -->
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script>
+        var elem = document.querySelector('.portfolio');
+        var msnry = new Masonry( elem, {
+          // options
+          itemSelector: '.project',
+          columnWidth: '.project',
+          percentPosition: true
+        });
+    </script>
+
+</body>
+</html>
